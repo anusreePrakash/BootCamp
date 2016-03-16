@@ -1,17 +1,15 @@
-package march_16;
+package shape;
 
 /*
-    Job of Rectangle class:
-        - Anything related to height and breadth
-            - Calculate the area
-            - Calculate the perimeters
+    Jobs of Rectangle class:
+        - Every calculation related to its properties
  */
 
 public class Rectangle {
     private final double height;
     private final double width;
 
-    public Rectangle(double width, double height) {
+    private Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
