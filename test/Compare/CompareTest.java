@@ -13,6 +13,7 @@ public class CompareTest {
     public void compareLengthShouldGiveTrueIfBothTheQuantitiesHaveSameValueInOneUnit() throws Exception {
         Unit feet = new Feet(1);
         Unit inch = new Inch(12);
+
         Assert.assertEquals(feet,inch);
     }
 
