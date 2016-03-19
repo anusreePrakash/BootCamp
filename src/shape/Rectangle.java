@@ -5,11 +5,13 @@ package shape;
         - Every calculation related to its properties
  */
 
+import Exceptions.InvalidArguments;
+
 public class Rectangle {
     private final double height;
     private final double width;
 
-    private Rectangle(double width, double height) {
+    protected Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
@@ -18,9 +20,9 @@ public class Rectangle {
         return height * width;
     }
 
-    public static Rectangle create(double width, double height) {
+    public static Rectangle create(double width, double height) throws InvalidArguments {
         if(width<=0 || height <=0){
-            throw new IllegalArgumentException("illegal arguments");
+            throw new InvalidArguments();
         }
         return new Rectangle(width,height);
     }
