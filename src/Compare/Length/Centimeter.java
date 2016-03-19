@@ -41,10 +41,9 @@ public class Centimeter implements Unit {
         if (this == o) return true;
 
         if (o == null || !(o instanceof Unit)) return false;
-        Unit centimeter = ((Unit) o).convertTo(new Centimeter(0));
-        return Double.compare(centimeter.getValue(), value) == 0;
-
-
+        Unit thisInInch = getScaleFor(Inch.class);
+        Unit otherInInch = ((Unit) o).convertTo(new Inch(0));
+        return Double.compare(thisInInch.getValue(), otherInInch.getValue()) == 0;
     }
 
 }

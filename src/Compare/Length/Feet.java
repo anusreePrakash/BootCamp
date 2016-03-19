@@ -40,10 +40,11 @@ public class Feet implements Unit {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null ||!(o instanceof Unit)) return false;
 
-        Unit feet =  ((Unit) o).convertTo(new Feet(0));
-        return Double.compare(feet.getValue(), value) == 0;
+        if (o == null || !(o instanceof Unit)) return false;
+        Unit thisInInch = getScaleFor(Inch.class);
+        Unit otherInInch = ((Unit) o).convertTo(new Inch(0));
+        return Double.compare(thisInInch.getValue(), otherInInch.getValue()) == 0;
     }
 
 }
